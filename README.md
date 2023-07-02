@@ -1,6 +1,6 @@
 Sun  2 Jul 15:10:34 UTC 2023
 
-    *That gum you like is going to come back in style.*
+*That gum you like is going to come back in style.*
 
 Project no longer on hold - compilation issue resolved.
 
