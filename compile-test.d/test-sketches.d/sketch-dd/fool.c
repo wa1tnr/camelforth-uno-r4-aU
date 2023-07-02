@@ -22,9 +22,9 @@ void slower() {
 }
 
 void this_here_now() {
-  toggle_LED(7);
+  toggle_LED(15);
   slower();
-  toggle_LED(7);
+  toggle_LED(15);
   for (int off_to_on_ratio = 7; off_to_on_ratio > 1; off_to_on_ratio--) {
     slower();
   }
