@@ -1,14 +1,16 @@
+// #include <Arduino.h>
 
-char getch(void) {
-    char space = ' ';
-    return space;
-}
+
+// #include <stdio.h>
+
+/*
 
 void putch(char c) {
+    // printf(c); // dubious at best maybe
+    // printf('b');
+    // snprintf(c%, 'b', 1);
+    fprintf(stderr, 'c');
     return ;  // doesn't have to do anything
 }
 
-int getquery(void) {
-    // return(UARTCharsAvail(UART0_BASE) != 0);
-    return(0 == 0);
-}
+*/
