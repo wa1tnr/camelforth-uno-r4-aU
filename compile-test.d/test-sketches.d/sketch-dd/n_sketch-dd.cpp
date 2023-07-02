@@ -9,6 +9,7 @@ extern "C" {
 // extern void this_here();
 
 void this_here();
+void interpreter(void);
 
 #ifdef __cplusplus
 }
@@ -16,6 +17,7 @@ void this_here();
 
 void trapped() {
   // void this_here() {
+  interpreter();
   this_here();
   while(-1);
 }
