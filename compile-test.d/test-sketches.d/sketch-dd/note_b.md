@@ -1,4 +1,12 @@
 
+Hey it 'works' as the pilgrims say.
+
+  https://wokwi.com/projects/369152842456199169
+
+
+older:
+
+
  when wokwi can be made to see EOL char the interpreter
  has a good chance to function reasonably well for
  further testing and development:
