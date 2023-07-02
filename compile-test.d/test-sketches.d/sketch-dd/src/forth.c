@@ -583,6 +583,8 @@ CODE(emit) {
 }
 */
 
+#include <stdio.h> /* TODO move this upwards */
+
 CODE(emit) {
     printf("%c", *psp++);
     // putch((char)*psp++);
@@ -1222,8 +1224,6 @@ THREAD(cold) = { Fenter,
 /*
  * INNER INTERPRETER
  */
-
-#include <stdio.h> /* TODO move this upwards */
 
 void interpreter(void)
 {
