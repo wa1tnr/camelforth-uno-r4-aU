@@ -575,8 +575,17 @@ CODE(key) {
     *--psp = (unsigned int)getch();
 }
 
+extern void putch(char c);
+
+/*
 CODE(emit) {
     putch((char)*psp++);
+}
+*/
+
+CODE(emit) {
+    printf("%c", *psp++);
+    // putch((char)*psp++);
 }
 
 CODE(keyq) {
@@ -879,7 +888,7 @@ THREAD(spaces) = { Fenter, Tdup, Tqbranch, OFFSET(5), Tspace, Toneminus,
 #define BACKSPACE 0x7f      /* key returned for backspace */
 #define BACKUP  8           /* what to emit for backspace */
 #else
-#define NEWLINE 0x0d
+#define NEWLINE 0x0a        /* NEWLINE 0x0d */
 #define BACKSPACE 8         /* key returned for backspace */
 #define BACKUP  8           /* what to emit for backspace */
 #endif
@@ -1213,6 +1222,8 @@ THREAD(cold) = { Fenter,
 /*
  * INNER INTERPRETER
  */
+
+#include <stdio.h> /* TODO move this upwards */
 
 void interpreter(void)
 {
