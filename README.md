@@ -1,7 +1,12 @@
-Sat  1 Jul 10:30:33 UTC 2023
+Sun  2 Jul 15:10:34 UTC 2023
 
-Could not compile - too early to attempt this one.  Sorry.
+    *That gum you like is going to come back in style.*
 
-Project on hold until .. until it isn't.
+Project no longer on hold - compilation issue resolved.
 
-Could be weeks (need to try platformio for example).
+
+### Hey it 'works' as the pilgrims say.
+
+  https://wokwi.com/projects/369152842456199169
+
+END
