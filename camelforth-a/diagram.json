@@ -33,6 +33,10 @@
     [ "r1:2", "bb1:44b.i", "", [ "$bb" ] ],
     [ "esp:D15", "bb1:35t.c", "green", [ "h28.82", "v126.94", "h33.58", "v30.78", "h15.86" ] ],
     [ "esp:GND.2", "bb1:tn.12", "black", [ "h-28.31", "v115.11", "h20.05" ] ],
+
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+
     [ "bb1:tn.50", "bb1:bn.50", "green", [ "v-3.54", "h61.23", "v173.08", "h-56.86" ] ]
   ],
   "dependencies": {}

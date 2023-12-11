@@ -588,8 +588,8 @@ CODE(emit) {
 #include <stdio.h> /* TODO move this upwards */
 
 CODE(emit) {
-    // printf("%c", *psp++);
-    putch((char)*psp++);
+    printf("%c", *psp++);
+    // putch((char)*psp++);
 }
 
 CODE(keyq) {
@@ -1227,6 +1227,12 @@ THREAD(cold) = { Fenter,
  * INNER INTERPRETER
  */
 
+void     messaging_temp() {
+    // try to talk to end user
+    printf("hey there");
+    printf("  how now");
+}
+
 void interpreter(void)
 {
     void (*xt)(void *);     /* pointer to code function */
@@ -1237,6 +1243,7 @@ void interpreter(void)
     ip = &Tcold;
     ip += CELL;
     run = 1;                /* set to zero to terminate interpreter */
+    messaging_temp();
     while (run) {
         w = *(void **)ip;       /* fetch word address from thread */
         ip += CELL;

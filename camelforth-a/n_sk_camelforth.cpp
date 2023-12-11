@@ -5,8 +5,19 @@
 extern "C" {
 #endif
 
+// void experiment_a_asm(unsigned int *rptr);
+
+// extern void this_here();
+
 void this_here();
 void interpreter(void);
+
+/*
+char getch(void);
+void putch(char c);
+int getquery(void);
+*/
+
 
 extern void this_here_now();
 
@@ -30,8 +41,7 @@ char getch(void) {
 }
 
 void putch(char c) {
-    Serial.write(c);
-    // printf("%c", c);
+    printf("%c", c);
 
     return ;  // doesn't have to do anything
 }
@@ -42,34 +52,45 @@ int getquery(void) {
     return(0 != 0);
 }
 
+
+
+
+
+
 #ifdef __cplusplus
 }
 #endif
 
+
+
 void trapped() {
-  this_here_now();
-  this_here_now();
+  // this_here_now();
+  // this_here_now();
 
   interpreter();
 
   while(-1);
 }
 
-#define THIS_LED_BDEF 31
-
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.write(' ');
   Serial.println("\n\n Camelforth in C");
-  Serial.println("\n\nWed  5 Jul 19:51:14 UTC 2023 - for black pill 411CE on Serial A9 A10\n\n");
-  pinMode(THIS_LED_BDEF, OUTPUT);
+  pinMode(15, OUTPUT);
 
+/*
   for (int count = 3; count > 0; count--) {
-    digitalWrite(THIS_LED_BDEF, 0);
+    digitalWrite(15, 1);
     delay(90);
-    digitalWrite(THIS_LED_BDEF, 1);
+    digitalWrite(15, 0);
     delay(700);
   }
+*/
+
+  // this_here_now();
+
+  // pinMode(LED_BUILTIN, OUTPUT);
+
   trapped();
 }
 

@@ -1,7 +1,6 @@
 /* Sun  2 Jul 16:18:33 UTC 2023 */
-#define THIS_LED 31
 
-int state = 1 ;
+int state ;
 
 void toggle_LED(int pinNumber) {
   state = !state;
@@ -16,15 +15,15 @@ void slowest() {
 
 void slower() {
   for (volatile int repeating = 25;
-    repeating > 0; repeating--) {
-      slowest();
+  repeating > 0; repeating--) {
+    slowest();
   }
 }
 
 void this_here_now() {
-  toggle_LED(THIS_LED);
+  toggle_LED(15);
   slower();
-  toggle_LED(THIS_LED);
+  toggle_LED(15);
   for (int off_to_on_ratio = 7; off_to_on_ratio > 1; off_to_on_ratio--) {
     slower();
   }
