@@ -5,6 +5,17 @@
 Project no longer on hold - compilation issue resolved.
 
 
+### Very likely: ESP32 stand-in for Uno R4 Wifi on Wokwi
+
+  That's explain why the esp32 version (here) is so complete.
+
+  Expecting: wokwi version continues to work on wokwi using
+  the esp32 target; and:
+
+  local version working on real Uno R4 hardware.
+
+  Just a theory. ;)
+
 ### No idea what is what atm 11 Dec 2023
 
 newest (esp32 only .. probably):
