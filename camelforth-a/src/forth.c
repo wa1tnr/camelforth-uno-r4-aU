@@ -588,8 +588,8 @@ CODE(emit) {
 #include <stdio.h> /* TODO move this upwards */
 
 CODE(emit) {
-    printf("%c", *psp++);
-    // putch((char)*psp++);
+    // printf("%c", *psp++);
+    putch((char)*psp++);
 }
 
 CODE(keyq) {
