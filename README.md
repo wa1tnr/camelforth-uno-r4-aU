@@ -5,6 +5,12 @@
 Project no longer on hold - compilation issue resolved.
 
 
+### No idea what is what atm 11 Dec 2023
+
+newest (esp32 only .. probably):
+
+  https://wokwi.com/projects/383781607558747137
+
 ### Hey it 'works' as the pilgrims say.
 
 newer:
