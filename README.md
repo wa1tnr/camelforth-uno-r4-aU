@@ -4,6 +4,29 @@
 
 Project no longer on hold - compilation issue resolved.
 
+### Now ported to Uno R4 Minima (again?)
+
+  i/o routines likely at the heart of today's difficulty. ;)
+
+  This one branch, radio-aa (radioactive) is working.
+
+  It's radioactive because of mass deletes of a nuisance branch,
+  to help clarify things a bit.
+
+  Can easily be merged for changes with a bit of thought (so as
+  not to make mistakes, not to re-engineer a thing - already
+  working).
+
+  Main problem was likely using for both ESP32 and Uno R4 without
+  a bit more finesse.  i/o incompatibility (but very simple to
+  rectify) so it's just an organizational issue not a real coding
+  mystery at all.
+
+  My apologies.  Wanted to two birds one stone it a bit too eagerly. ;)
+
+  /confession
+
+  12 December 2023, 11:42:51 UTC
 
 ### Very likely: ESP32 stand-in for Uno R4 Wifi on Wokwi
 
