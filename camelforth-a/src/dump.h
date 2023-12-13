@@ -55,13 +55,8 @@ void dumpRAM() {
 
 /* dump 256 bytes of RAM */
 CODE(dump) { /* adr n -- */
-  putch(0x0d);
-  putch(0x0a);
-  int j = psp[0];
-  psp++;
+  int j = psp[0]; psp++;
   for (int i = 0; i < j; i++) {
-    putch(0x0d);
-    putch(0x0a);
-    dumpRAM();
+    putch(0x0d); putch(0x0a); dumpRAM();
   }
 }
