@@ -9,21 +9,27 @@ targettte:	clean
 
 all:
 
-install:
+that:
+	@echo
+
+comm:
+	@cf-fastpico9t /dev/ttyACM0
+
+# ./cf-fastpico9t-uno_r4_wifi.sh /dev/ttyACM0
+
+sleeper:
+	@date
+	@sleep 1
+
+upload:
 	@echo upload to uno r4 minima
 	@arduino-cli upload --fqbn arduino:renesas_uno:minima -p /dev/ttyACM0
 
-# @./upload.sh
-# @arduino-cli upload --fqbn arduino:renesas_uno:unor4wifi -p /dev/ttyACM0
-
-comm:
-	./cf-fastpico9t-uno_r4_wifi.sh /dev/ttyACM0
+install:	upload sleeper comm
+	@echo done
 
 clean:
 	@echo so this is make clean right here
 	rm -rf /tmp/arduino/cores ; rm -rf /tmp/arduino/sketches
-
-# arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi ${1}
-# arduino-cli compile --fqbn arduino:renesas_uno:minima ${1}
 
 # end.
