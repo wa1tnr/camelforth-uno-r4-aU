@@ -8,7 +8,7 @@ void dumpRAM() {
     psp++;
     ram = (char *) p;
     // printf("\n%4X: ", p);
-    snprintf(lbuffer, sizeof(lbuffer), "%4X: ", // removed a newline
+    snprintf(lbuffer, sizeof(lbuffer), "\r%4X: ", // removed a newline
                 (uint32_t) p, '\0');
     memcpy(buffer, lbuffer, sizeof(buffer)); putLine(buffer);
     int count = -1;
@@ -29,7 +29,7 @@ void dumpRAM() {
               buffer, '\0');
         memcpy(buffer, lbuffer, sizeof(buffer)); putLine(buffer);
     }
-    snprintf(lbuffer, sizeof(lbuffer), "%c%c%c", '\r', '\n', '\0');
+    snprintf(lbuffer, sizeof(lbuffer), "%c", '\0');
     memcpy(buffer, lbuffer, sizeof(buffer)); putLine(buffer);
     psp--;
     psp[0] = p + 16;
