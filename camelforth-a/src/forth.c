@@ -580,14 +580,6 @@ CODE(key) {
 
 extern void putch(char c);
 
-/*
-CODE(emit) {
-    putch((char)*psp++);
-}
-*/
-
-// #include <stdio.h> /* TODO move this upwards */
-
 CODE(emit) {
     // printf("%c", *psp++);
     putch((char)*psp++);
@@ -627,28 +619,9 @@ CODE(dots) {    /* print stack, for testing */
     }
 }
 
-CODE(bye) {   /* adr n -- */
-    char lbuffer[64];
-    unsigned char *p;
-    unsigned int n, i;
-    n = *psp++;
-    p = (unsigned char *)*psp++;
-    for (i=0; i<n; i++) {
-        if ((i&0xf)==0) {
-            /* printf("\n%8x:", (unsigned int) p); */
-            snprintf(lbuffer, sizeof(lbuffer), " %8x", *p, '\0');
-            memcpy(buffer, lbuffer, sizeof(buffer));
-            putLine(buffer);
-        }
-        /* printf(" %02x", *p++); */
-        snprintf(lbuffer, sizeof(lbuffer), " %02x", *p++, '\0');
-    }
-}       
-
-// CODE(bye) {
-    // dumpRAM();
-    // run = 0;
-// }
+CODE(bye) {
+    run = 0;
+}
 
 /*
  * HIGH LEVEL WORD DEFINITIONS

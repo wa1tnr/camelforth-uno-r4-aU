@@ -9,6 +9,7 @@ HEX
 : binary 2 BASE ! ;
 : octal  8 BASE ! ;
 : rene 20004AD0 ;
+: n 10 dump ; ( next )
 ( end of list )
 
 ( DOT S word  .S called 'CYA' here. )
