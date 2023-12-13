@@ -5,12 +5,12 @@
 extern "C" {
 #endif
 
-// void experiment_a_asm(unsigned int *rptr);
-
-// extern void this_here();
-
+/* functions in a .c file are NOT given as extern prototype */
+/* just do the usual prototype without the extern qualifier */
 void this_here();
 void interpreter(void);
+
+void printStuff(char* buffer);
 
 /*
 char getch(void);
@@ -22,22 +22,23 @@ int getquery(void);
 extern void this_here_now();
 
 char getch(void) {
-//  this_here_now();
     bool waiting_ch = 0;
-
     for (int testing = 5; testing > 0; testing--) {
       ;
     }
 
     while (!waiting_ch) {
       waiting_ch = Serial.available();
-      // this_here_now(); // loop
     }
 
     if (waiting_ch) {
       char ch = Serial.read();
       return ch;
     }
+}
+
+void putLine(char* buffer) {
+    Serial.print(buffer);
 }
 
 void putch(char c) {
