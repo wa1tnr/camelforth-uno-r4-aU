@@ -619,13 +619,18 @@ CODE(dothhhh) {        /* temporary definition for testing */
 }
 
 CODE(dots) {    /* print stack, for testing */
+    char lbuffer[64];
+
     // printStuff(char* buffer);
-    memcpy(buffer, "12345", 4);
     // printStuff(buffer);
-    putLine(buffer);
     unsigned int *p;
     p = &pstack[PSTACKSIZE-2];      /* deepest element on stack */
-    printf("\n%8x:", (unsigned int)p);
+    // printf("\n%8x:", (unsigned int)p);
+    // does it still print anything now
+    snprintf(lbuffer, sizeof(lbuffer), "\n%8x:", (unsigned int) p);
+    // memcpy(buffer, "12345", 4);
+    memcpy(buffer, lbuffer, sizeof(buffer));
+    putLine(buffer);
     while (p >= psp) printf(" %8x", *p--);
 }
 
