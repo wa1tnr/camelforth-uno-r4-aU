@@ -1,7 +1,4 @@
-/* Sun  2 Jul 16:18:33 UTC 2023 */
-
-char buffer[64];
-void putLine(char* buffer);
+/* Tue 12 Dec 23:35:18 UTC 2023 */
 
 /****h* camelforth/forth.c
  * NAME
@@ -611,36 +608,23 @@ CODE(dothhhh) {        /* temporary definition for testing */
     printf(" %8x", *psp++);
 }
 
+char buffer[64];
+void putLine(char* buffer);
 
 CODE(dots) {    /* print stack, for testing */
     char lbuffer[64];
     unsigned int *p;
     p = &pstack[PSTACKSIZE-2];      /* deepest element on stack */
     // buffer size format
-    snprintf(lbuffer, sizeof(lbuffer), "\n\n\n%8x:", (unsigned int) p, '\0');
+    snprintf(lbuffer, sizeof(lbuffer), "%8x:", (unsigned int) p, '\0');
     memcpy(buffer, lbuffer, sizeof(buffer));
     putLine(buffer);
-
     while (p >= psp) {
-
-        snprintf(lbuffer, sizeof(lbuffer), " %8x", *p--);
+        snprintf(lbuffer, sizeof(lbuffer), " %8x", *p--, '\0');
         memcpy(buffer, lbuffer, sizeof(buffer));
         putLine(buffer);
-
-/*
-        printf(" %8x", *p--);
-        printf(" %8x", *p--);
-        printf(" %8x", *p--);
-*/
-
     }
 }
-
-
-    // printf("\n%8x:", (unsigned int)p);
-    // snprintf(lbuffer, sizeof(lbuffer), "\n%8x:", (unsigned int) p, '\0');
-    // memcpy(buffer, "12345", 4);
-
 
 CODE(dump) {   /* adr n -- */
     unsigned char *p;
