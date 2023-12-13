@@ -34,12 +34,12 @@ void dumpRAM() {
     memcpy(buffer, lbuffer, sizeof(buffer)); putLine(buffer);
     psp--;
     psp[0] = p + 16;
-    putch(0x0d);
-    putch(0x0a);
+    putch(0x0d); putch(0x0a);
 }
 
 /* dump 256 bytes of RAM */
 CODE(dump) {                    /* adr n -- */
+    putch(0x0d); putch(0x0a);
     int j = psp[0];
     psp++;
     for (int i = 0; i < j; i++) {
