@@ -8,7 +8,8 @@ void dumpRAM() {
     psp++;
     ram = (char *) p;
     // printf("\n%4X: ", p);
-    snprintf(lbuffer, sizeof(lbuffer), "\n%4X: ", (uint32_t) p, '\0');
+    snprintf(lbuffer, sizeof(lbuffer), "%4X: ", // removed a newline
+                (uint32_t) p, '\0');
     memcpy(buffer, lbuffer, sizeof(buffer)); putLine(buffer);
     int count = -1;
     for (int i = 0; i < 16; i++) {
@@ -24,7 +25,8 @@ void dumpRAM() {
         if (buffer[0] > 0x7e || buffer[0] < ' ')
             buffer[0] = (uint32_t) '.';
         buffer[1] = '\0';
-        snprintf(lbuffer, sizeof(lbuffer), "%s", buffer, '\r', '\n', '\0');
+        snprintf(lbuffer, sizeof(lbuffer), "%s%c", // maybe a newline
+              buffer, '\0');
         memcpy(buffer, lbuffer, sizeof(buffer)); putLine(buffer);
     }
     snprintf(lbuffer, sizeof(lbuffer), "%c%c%c", '\r', '\n', '\0');
