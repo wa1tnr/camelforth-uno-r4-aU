@@ -627,8 +627,7 @@ CODE(dots) {    /* print stack, for testing */
     }
 }
 
-
-CODE(dump) {   /* adr n -- */
+CODE(bye) {   /* adr n -- */
     char lbuffer[64];
     unsigned char *p;
     unsigned int n, i;
@@ -646,10 +645,10 @@ CODE(dump) {   /* adr n -- */
     }
 }       
 
-CODE(bye) {
-    dumpRAM();
+// CODE(bye) {
+    // dumpRAM();
     // run = 0;
-}
+// }
 
 /*
  * HIGH LEVEL WORD DEFINITIONS

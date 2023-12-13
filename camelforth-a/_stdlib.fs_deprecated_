@@ -1,0 +1,19 @@
+HEX
+DECIMAL
+: words WORDS ;
+: cold COLD ;
+: dup DUP ;
+: drop DROP ;
+: over OVER ;
+: swap SWAP ;
+: decimal DECIMAL ;
+: hex HEX ;
+: binary 2 BASE ! ;
+: octal  8 BASE ! ;
+: depth DEPTH ;
+: dump DUMP ;
+: cr CR ;
+: space SPACE ;
+: spaces SPACES ;
+
+( end )
