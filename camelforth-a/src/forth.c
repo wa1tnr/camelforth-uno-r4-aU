@@ -1,14 +1,7 @@
 /* Sun  2 Jul 16:18:33 UTC 2023 */
 
 char buffer[64];
-
 void putLine(char* buffer);
-
-void printStuff(char* buffer) {
-    int i = 1;
-    putch((i+32));
-    printf(i); // not meant to be functional - just a test of an empty function's presence
-}
 
 /****h* camelforth/forth.c
  * NAME
@@ -621,13 +614,13 @@ CODE(dothhhh) {        /* temporary definition for testing */
 CODE(dots) {    /* print stack, for testing */
     char lbuffer[64];
 
-    // printStuff(char* buffer);
-    // printStuff(buffer);
     unsigned int *p;
     p = &pstack[PSTACKSIZE-2];      /* deepest element on stack */
     // printf("\n%8x:", (unsigned int)p);
     // does it still print anything now
-    snprintf(lbuffer, sizeof(lbuffer), "\n%8x:", (unsigned int) p);
+     // buffer size format
+    // snprintf(lbuffer, sizeof(lbuffer), "\n%8x:", (unsigned int) p, '\0');
+    snprintf(lbuffer, sizeof(lbuffer), "\n%8x:", (unsigned int) 74, '\0');
     // memcpy(buffer, "12345", 4);
     memcpy(buffer, lbuffer, sizeof(buffer));
     putLine(buffer);
