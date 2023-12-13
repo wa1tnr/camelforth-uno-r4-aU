@@ -66,9 +66,6 @@ int getquery(void) {
 
 
 void trapped() {
-  // this_here_now();
-  // this_here_now();
-
   interpreter();
 
   Serial.println("");
@@ -95,24 +92,11 @@ void blynque() {
 void setup() {
   Serial.begin(115200);
   while(!Serial);
-  pinMode(13, OUTPUT); blynque(); delay(800);
+  pinMode(13, OUTPUT);
+  // blynque();
+  delay(800);
   Serial.write(' ');
   Serial.println("\n\n Camelforth in C");
-
-/*
-  for (int count = 3; count > 0; count--) {
-    digitalWrite(15, 1);
-    delay(90);
-    digitalWrite(15, 0);
-    delay(700);
-  }
-*/
-
-  // this_here_now();
-
-  // pinMode(LED_BUILTIN, OUTPUT);
-
-
   trapped();
 }
 
