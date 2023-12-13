@@ -1,0 +1,4 @@
+#!/bin/sh
+make clean ; make ; sleep 3 ; echo ; date ; echo ; make install
+echo ; echo exiting the ./c script ; echo
+exit 0
