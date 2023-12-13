@@ -1,7 +1,12 @@
-0.1.0-pre-alpha READY.FOR.RELEASE
+0.1.1-pre-alpha READY.FOR.RELEASE
 
-last commit 44ca2604953f4d3772c71999780d9d6aff53556a
+last commit 998df977cce5860027111fc0e52e4ac8c0894d1b
 
-Date:   Sun Jul  2 16:35:56 UTC 2023
+Date:   Wed Dec 13 14:35:44 UTC 2023
 
-    As found in ZIP from wokwi - in sync now
+    blind commit from a few hours back
+    
+            modified:   quick.fs
+            modified:   src/forth.c
+
+On branch uno-r4-minima-works
