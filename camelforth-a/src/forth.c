@@ -617,10 +617,23 @@ CODE(dots) {    /* print stack, for testing */
     unsigned int *p;
     p = &pstack[PSTACKSIZE-2];      /* deepest element on stack */
     // buffer size format
-    snprintf(lbuffer, sizeof(lbuffer), "%8x:", (unsigned int) *p, '\0');
+    snprintf(lbuffer, sizeof(lbuffer), "\n\n\n%8x:", (unsigned int) p, '\0');
     memcpy(buffer, lbuffer, sizeof(buffer));
     putLine(buffer);
-    while (p >= psp) printf(" %8x", *p--);
+
+    while (p >= psp) {
+
+        snprintf(lbuffer, sizeof(lbuffer), " %8x", *p--);
+        memcpy(buffer, lbuffer, sizeof(buffer));
+        putLine(buffer);
+
+/*
+        printf(" %8x", *p--);
+        printf(" %8x", *p--);
+        printf(" %8x", *p--);
+*/
+
+    }
 }
 
 
