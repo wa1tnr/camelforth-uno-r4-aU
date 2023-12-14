@@ -1,4 +1,4 @@
-/* Tue 12 Dec 23:34:02 UTC 2023 */
+/* Thu 14 Dec 13:56:23 UTC 2023 */
 #include <Arduino.h>
 
 #ifdef __cplusplus
@@ -6,18 +6,15 @@ extern "C" {
 #endif
 
 void interpreter(void);
-void printStuff(char *buffer);
 
 char getch(void) {
   bool waiting_ch = 0;
   for (int testing = 5; testing > 0; testing--) {
     ;
   }
-
   while (!waiting_ch) {
     waiting_ch = Serial.available();
   }
-
   if (waiting_ch) {
     char ch = Serial.read();
     return ch;
@@ -31,13 +28,15 @@ void putch(char c) {
   return; // doesn't have to do anything
 }
 
-int getquery(void) { return (0 != 0); }
+// HOOK // int getquery(void) { return (0 != 0); }
 
 #ifdef __cplusplus
 }
 #endif
 
 void trapped() {
+  Serial.println("\n  Entering CamelForth from 'trapped()':\n");
+  delay(40);
   interpreter();
   Serial.println("stale print");
   while (-1)
@@ -58,7 +57,10 @@ void setup() {
 
   delay(800);
   Serial.write(' ');
-  Serial.println("\n\n Camelforth in C");
+  /*
+      Serial.println(" Camelforth in C");
+  */
+  // make it harder to delete the above comment ;)
   trapped();
 }
 

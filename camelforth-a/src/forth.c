@@ -586,20 +586,33 @@ CODE(emit) {
 }
 
 CODE(keyq) {
-    *--psp = getquery(); 
+    // *--psp = getquery(); 
+    // hook - never did implement
+    putch('?'); // signal operator this is wrong
 }
 
 CODE(dot) {        /* temporary definition for testing */
-    printf(" %d", *psp++);
+    printf(" %d", *psp++); // not used there is a thread for this dec 2023
 }
 
+/* these two are not functional but harmless: */
 CODE(dothh) {        /* temporary definition for testing */
-    printf(" %2x", *psp++);
+    printf(" %2x", *psp++); // must be ported dec 2023  LOW PRIORITY
 }
 
 CODE(dothhhh) {        /* temporary definition for testing */
-    printf(" %8x", *psp++);
+    printf(" %8x", *psp++); // must be ported dec 2023  LOW PRIORITIY not often used
 }
+
+/*  -------------------  */
+/*  SHORT TERM COMMENT:  */
+/*  -------------------  */
+/*  Expiry: Feb 2024     */
+/*  -------------------  */
+
+/* see existing uses for snprintf() in this very file */
+/*     to consider a way past what is going on        */
+/*     with dothh  and dothhhh (just above).          */
 
 char buffer[64];
 void putLine(char* buffer);
@@ -711,9 +724,9 @@ THREAD(nequal) = { Fsequal };  /* synonym */
 PRIMITIVE(key);
 PRIMITIVE(emit);
 PRIMITIVE(keyq);
-// PRIMITIVE(dot);
-PRIMITIVE(dothh);
-PRIMITIVE(dothhhh);
+// PRIMITIVE(dot); // T dot replaces this - there is a u. variant - nothing else Dec 2023
+PRIMITIVE(dothh); // inop dec 2023 - printf based needs porting
+PRIMITIVE(dothhhh); // inop dec 2023
 PRIMITIVE(dots);
 PRIMITIVE(dump);
 PRIMITIVE(bye);

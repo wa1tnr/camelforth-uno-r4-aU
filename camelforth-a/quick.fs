@@ -39,6 +39,7 @@ HEX
   DOTTUS DROP ;
 
 : .s CYA ;
-
+: ramstarting 20004AE0 ;
+: loladrs DEEE ;  ( already in HEX )
 ( END )
 ( : #SD> DEPTH 3C EMIT . 8 EMIT 3E EMIT SPACE ; )
